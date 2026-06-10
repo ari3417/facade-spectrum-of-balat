@@ -1,0 +1,77 @@
+{
+  "Bina_ID": {
+    "description": "Unique numerical identifier assigned to each historical building.",
+    "data_type": "Integer",
+    "example": 1425
+  },
+  "Dosya_Adi": {
+    "description": "Filename with extensions used in coordinate tracking.",
+    "data_type": "String",
+    "example": "soyut_balat_1425_CabiAliSk._41,027532_28,949910.png"
+  },
+  "Saf_Isim": {
+    "description": "Cleaned base filename without extensions.",
+    "data_type": "String",
+    "example": "soyut_balat_1425_CabiAliSk._41,027532_28,949910"
+  },
+  "Sokak_Adı": {
+    "description": "Street name where the building is located.",
+    "data_type": "String",
+    "example": "CabiAliSk."
+  },
+  "Kamera_Lat": {
+    "description": "Latitude of the Google Street View camera position.",
+    "data_type": "Float",
+    "example": 41.02753
+  },
+  "Kamera_Lon": {
+    "description": "Longitude of the Google Street View camera position.",
+    "data_type": "Float",
+    "example": 28.94991
+  },
+  "Bina_Lat": {
+    "description": "Exact latitude of the building footprint.",
+    "data_type": "Float",
+    "example": 41.02745
+  },
+  "Bina_Lon": {
+    "description": "Exact longitude of the building footprint.",
+    "data_type": "Float",
+    "example": 28.94991
+  },
+  "Dosya_Yolu": {
+    "description": "File path directory in Google Drive.",
+    "data_type": "String",
+    "example": "/content/drive/MyDrive/balat-soyut-cizimler/soyut_balat_1425_CabiAliSk._41,027532_28,949910.png"
+  },
+  "Fotoğraf İsmi": {
+    "description": "Filename of the facade image used in the typology and AI analysis.",
+    "data_type": "String",
+    "example": "balat_720_FethiyeCd._41,027843_28,946305.png"
+  },
+  "Kat Sayısı": {
+    "description": "Number of floors, calculated dynamically via YOLO object detection and MeanShift clustering.",
+    "data_type": "Integer",
+    "example": 5
+  },
+  "Duvar / Cumba Aksı": {
+    "description": "Number of vertical architectural axes or bay windows detected by AI.",
+    "data_type": "String",
+    "example": "Duvar: 2 | Cumba: 0"
+  },
+  "Zemin Kat (Fonksiyon)": {
+    "description": "Functional usage of the ground floor determined via image thresholding analysis.",
+    "data_type": "String",
+    "example": "Ticari (Geniş Vitrin)"
+  },
+  "Kat Malzemeleri": {
+    "description": "Primary material used on the facade inferred via Canny Edge Detection.",
+    "data_type": "String",
+    "example": "Sıvalı | Ahşap | Ahşap | Ahşap"
+  },
+  "Sembolik_Binalar (KML)": {
+    "description": "Additional iconic landmarks integrated dynamically into the dataset from the binalar.kml file.",
+    "data_type": "Geospatial XML Data",
+    "example": "Fener Greek High School Polygon"
+  }
+}

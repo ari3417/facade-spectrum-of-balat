@@ -1,0 +1,114 @@
+{
+  "dataset_identity": {
+    "title": "Facade Spectrum of Balat",
+    "description": "An interactive data dashboard and comprehensive dataset exploring the architectural typology, material distribution, and color spectrum of historical facades in the Balat district of Istanbul. The project seamlessly merges geospatial urban data with computer vision and computational color analysis.",
+    "version": "1.0",
+    "date_created": "2026-06-10",
+    "language": "en"
+  },
+  "creators": [
+    {
+      "name": "Zülal Arı",
+      "affiliation": "İstanbul Technical University",
+      "role": "Lead Researcher & Developer"
+    }
+  ],
+  "spatial_coverage": {
+    "location_name": "Balat, Fatih, Istanbul, Turkey",
+    "bounding_box": {
+      "min_latitude": 41.0260,
+      "max_latitude": 41.0350,
+      "min_longitude": 28.9400,
+      "max_longitude": 28.9550
+    },
+    "coordinate_reference_system": "EPSG:4326 (WGS84) mapped to EPSG:32635 for distance buffers"
+  },
+  "methodology_pipeline": [
+    {
+      "step": 1,
+      "name": "Data Collection",
+      "description": "Extraction of raw facade photographs from Google Street View imagery, capturing both the standard urban fabric and symbolic historical landmarks."
+    },
+    {
+      "step": 2,
+      "name": "Perspective Correction (Orthorectification)",
+      "description": "Raw Street View photographs were orthorectified to eliminate keystone distortion using OpenCV perspective transformation matrices and PyTorch-assisted ControlNet-aux models."
+    },
+    {
+      "step": 3,
+      "name": "Architectural Feature Detection",
+      "description": "Automated object detection using Roboflow was implemented to identify architectural features (windows, bay windows/cumba), informing the structural rhythm of the facades."
+    },
+    {
+      "step": 4,
+      "name": "Computational Color Extraction",
+      "description": "Orthorectified images were computationally analyzed using a vibrancy-weighted K-Means clustering algorithm (k=24, 10, 5, 3, 1) via OpenCV to extract the true dominant facade colors, ignoring deep shadows and overexposed skies."
+    },
+    {
+      "step": 5,
+      "name": "Geospatial Alignment",
+      "description": "Extracted GPS coordinates were buffered and matched to OpenStreetMap building footprints using K-Nearest Neighbors (KNN) spatial joins in GeoPandas."
+    }
+  ],
+  "cloud_storage_paths": {
+    "abstract_facades": "/content/drive/MyDrive/balat-soyut-kirpilmis/",
+    "symbolic_abstract_diagrams": "/content/drive/MyDrive/balat_sembolik_binalar_abstract/"
+  },
+  "data_sources": [
+    {
+      "source_name": "Google Street View Imagery",
+      "type": "Primary Data",
+      "content": "Original facade images"
+    },
+    {
+      "source_name": "OpenStreetMap (OSM)",
+      "type": "Secondary Data",
+      "content": "Building polygons and street network vectors extracted via OSMnx"
+    },
+    {
+      "source_name": "Custom KML Annotations",
+      "type": "Primary Data",
+      "content": "Manually curated geographic pins for iconic historical landmarks"
+    },
+    {
+      "source_name": "Automated Facade Abstractions",
+      "type": "Generative Data",
+      "content": "2D architectural diagrams synthesized entirely by OpenCV and YOLO object detection models."
+    }
+  ],
+  "technologies_and_frameworks": {
+    "Computer_Vision": [
+      "YOLO (Ultralytics)",
+      "MeanShift Clustering",
+      "Roboflow",
+      "PyTorch",
+      "ControlNet-aux",
+      "OpenCV (Canny Edge Detection)"
+    ],
+    "Geospatial_Analysis": [
+      "GeoPandas",
+      "OSMnx",
+      "Shapely"
+    ],
+    "Data_Processing": [
+      "Pandas",
+      "NumPy",
+      "Scikit-Learn"
+    ],
+    "Web_Visualization": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Leaflet.js"
+    ]
+  },
+  "file_formats": {
+    "dataset": "application/octet-stream (.pkl)",
+    "visualization": "text/html",
+    "metadata": "application/json"
+  },
+  "license": {
+    "name": "MIT License",
+    "description": "Open access for academic and non-commercial research use."
+  }
+}
