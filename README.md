@@ -1,5 +1,11 @@
 # Facade Spectrum of Balat
 
+> [!IMPORTANT]
+> **How to Run the Interactive Dashboard**  
+> To experience the full interactive HTML map with pop-up building photos, please download the `web_images` folder from the Drive link below and place it in the **exact same directory** as the `Balat_Interactive_Dashboard_v7.html` file before opening it.
+> 
+> **[🔗 Download the 'web_images' Folder (Google Drive)](https://drive.google.com/drive/folders/1W6sJKVUjtxClh2EjCDKvbXDGQIR6UvtT?usp=sharing)**
+
 ## 1. Research Question
 How do the facades of Balat communicate their architectural typology through color, material, and structural rhythm, and how can computer vision algorithms uncover hidden spatial patterns within this complex urban fabric?
 
