@@ -6,6 +6,12 @@ How do the facades of Balat communicate their architectural typology through col
 ## 2. Dataset Description
 "Facade Spectrum of Balat" is a multi-layered urban dataset. It comprises data extracted from Google Street View imagery, OpenStreetMap (OSM) building footprints, and manually curated historical landmarks (KML). The dataset documents architectural features (number of floors, bay windows/cumbalar, ground floor functions), dominant facade colors (extracted via Vibrancy-Weighted K-Means Clustering), and material classifications for buildings in the Balat district of Istanbul.
 
+### 🔗 Access to Raw Data & Visual Assets
+Due to GitHub storage constraints, the high-resolution image assets generated and utilized in this project are publicly hosted on Google Drive. You can access them via the links below:
+
+- **[🔗 Access the Facades Dataset (Abstracted Facade Views to use with Excel)](https://drive.google.com/drive/folders/1iyW2jeFyUGmSsI7VXCJgTpscygCEk3ZQ?usp=sharing)**
+- **[🔗 Access the Abstract Facade of Landmarks (Symbolic Buildings & KML)](https://drive.google.com/drive/folders/1x9vuvyBJqtdkBYNgnDTs9BATtH32u0nu?usp=sharing)**
+
 ## 3. Data Consistency Check
 Ensuring data consistency was a critical challenge due to the multi-source nature of the project (combining flat tabular data with complex geospatial OSM polygons and raw computer vision outputs). The dataset underwent strict geometric, tabular, and visual validation:
 
@@ -29,6 +35,7 @@ In urban data science, missing data extends beyond empty spreadsheet cells; it i
 
 **2. Physical Occlusion & Extraction Limits (MAR)**
 - **Bay Window (Cumba) Obstructions:** In traditional facades featuring prominent bay windows (Cumbalar), the protruded architectural structure physically obstructs the camera's viewing angle of the recessed wall sections. This optical occlusion may lead to a slight underestimation of the horizontal facade width and background window counts by the object detection algorithm.
+- **Setback and Garden Occlusions (Symbolic Buildings):** While significant symbolic/historic buildings are spatially included in the dataset, their physical setbacks (e.g., front gardens or courtyards) prevent them from being sufficiently visible from street-level imagery. Consequently, the true facade colors of these specific structures could not be accurately extracted, meaning their visual footprint is absent from the K-Means color weighting algorithm.
 
 **3. Tabular Missing Data Optimization**
 The missing data in the tabular database is not an error, but a deliberate architectural decision to ensure extreme performance. 
@@ -154,3 +161,20 @@ While Balat largely continues to maintain its historical fabric and residential 
 2. **The "Cumba" Paradox:** The *cumba* (bay window) is the most famous element of Balat. However, statistical analysis revealed that it is present on only **16.2%** of the buildings. It has become evident that a highly distinctive architectural feature can define a neighborhood's entire identity, even if it is statistically in the minority. This exact phenomenon also applies to the colorful facades. It was understood that the specific streets famous for their colorful houses actually constitute only a very small fraction of the overall map.
 
 3. **The Limits of Computer Vision in Historical Contexts:** The project revealed that AI and computer vision models struggle to cope with the dense, organic structure of historical cities. Geometric self-occlusion by bay windows and high pedestrian/vehicle density proved that historical urban data science requires significant human-guided correction and bias-weighting to yield truly accurate results.
+
+## 10. Repository Contents & Reproducibility
+
+### 📂 Directory Structure
+| File / Document | Description |
+| :--- | :--- |
+| `Balat_Interactive_Dashboard_v7.html` | The final interactive map and visualization dashboard (Main output). |
+| `dataset.pkl` | The cleaned and merged core dataset used for all statistical analyses. |
+| `Balat_Kesinlesmis_Bina_Koordinatlari.xlsx` | Raw spatial data containing geographic coordinates of the buildings. |
+| `Balat_Soyut_Tipoloji_Analizi(5).xlsx` | Raw architectural and visual typology data. |
+| `binalar.kml` | Geospatial boundary and location data for the Balat district. |
+| `balat_html_code.py` | The Python script used to generate the interactive HTML dashboard. |
+| `*.png` (Images) | Distribution charts, boxplots, and visual outliers used in this documentation. |
+
+
+---
+**Zülal Arı** | Istanbul Technical University | MBL549E Special Topics in Architectural Design Computing | Course Instructor: Can Uzun | Spring 2026
