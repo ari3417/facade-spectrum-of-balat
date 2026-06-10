@@ -96,7 +96,11 @@ The highest overall anomaly score (60.0%) was assigned to **Building ID: 1388** 
 - **Material Anomaly:** It features a highly irregular structural sequence (*Plaster | Plaster | Plaster | Plaster | Plaster | Plaster | Brick*).
 - **Color Anomaly:** It registered a Vibrancy Score of 0.0, indicating a completely desaturated, atypical shadow profile compared to the vibrant urban fabric.
 
-![The Ultimate Outlier - Building 1388](balat_1388_CebecibaşıMescidiSk._41,027490_28,948928.png)
+**Visual Breakdown of the Ultimate Outlier:**
+
+| Raw Street View | Perspective Corrected | Computed Abstract Facade |
+| :---: | :---: | :---: |
+| <img src="1388_raw.png" width="250"> | <img src="1388_corrected.png" width="250"> | <img src="1388_abstract.png" width="250"> |
 
 ## 6. Statistical Summary & Distribution
 To uncover the hidden architectural patterns of Balat, the extracted dataset was subjected to rigorous statistical analysis. The distribution of structural features reveals the dominant building typologies that define this historical urban fabric.
